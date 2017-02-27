@@ -18,14 +18,14 @@ RUN echo 'root:frotz' | chpasswd && \
     sed -ri 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config && \
     mkdir /root/.ssh
 
-RUN useradd -ms /bin/bash frotz 
-USER frotz
-WORKDIR /home/frotz
-
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 ENV PATH /usr/games/:$PATH
 RUN echo "export $PATH" >> /etc/profile
+
+RUN useradd -ms /bin/bash frotz 
+USER frotz
+WORKDIR /home/frotz
 
 EXPOSE 22
 CMD ["/usr/bin/supervisord"]
