@@ -24,8 +24,9 @@ ENV PATH /usr/games/:$PATH
 RUN echo "export $PATH" >> /etc/profile
 
 RUN useradd -ms /bin/bash frotz 
-USER frotz
 WORKDIR /home/frotz
 
 EXPOSE 22
 CMD ["/usr/bin/supervisord"]
+
+USER frotz
