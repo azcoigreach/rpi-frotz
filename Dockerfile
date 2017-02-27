@@ -9,8 +9,6 @@ RUN apt-get update \
 
 ENV PATH /usr/games/:$PATH
 
-RUN adduser frotz
+RUN adduser -ms /bin/bash frotz
 USER frotz
 WORKDIR /home/frotz
-
-
