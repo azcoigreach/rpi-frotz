@@ -9,7 +9,7 @@ RUN apt-get update \
 
 ENV PATH /usr/games/:$PATH
 
-#RUN useradd -ms /bin/bash frotz
-#USER frotz
+RUN useradd -ms /bin/bash frotz
+USER frotz
 RUN mkdir /home/frotz
 WORKDIR /home/frotz
