@@ -21,7 +21,7 @@ RUN echo 'root:frotz' | chpasswd && \
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 ENV PATH /usr/games/:$PATH
-RUN echo "export $PATH" >> /etc/profile
+RUN echo "export PATH=$PATH" >> /etc/profile
 
 RUN mkdir /home/frotz
 WORKDIR /home/frotz
