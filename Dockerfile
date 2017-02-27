@@ -11,7 +11,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
 # SET ROOT PASSWORD 
-RUN echo 'root:xeropus' | chpasswd && \
+RUN echo 'root:frotz' | chpasswd && \
   mkdir /var/run/sshd && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
