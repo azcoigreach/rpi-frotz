@@ -1,16 +1,10 @@
-# rpi-frotz - supervisord
+# rpi-frotz
 
 ##BUILD
   docker build -t azcoigreach/rpi-frotz https://github.com/azcoigreach/rpi-frotz.git
   
 ##RUN 
-  docker run --restart unless-stopped -tidP -v /home/pi/frotz:/home/frotz -v /usr/games:/usr/games azcoigreach/rpi-frotz
+  docker run --restart unless-stopped -tid -v /home/pi/frotz:/home/frotz -v /usr/games:/usr/games azcoigreach/rpi-frotz
   
-##SSH to game
-  Conform SSH port of rpi-frotz container 
-    docker ps
+##ATTACH to container
   
-  ssh root@localhost -p [container_port]
-
-  user root
-  pass frotz
