@@ -10,6 +10,6 @@ RUN apt-get update \
 ENV PATH /usr/games/:$PATH
 
 RUN useradd -ms /bin/bash frotz
-RUN CHMOD 0755 /home/frotz
+RUN chmod 0755 /home/frotz
 USER frotz
 WORKDIR /home/frotz
