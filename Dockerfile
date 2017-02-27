@@ -23,10 +23,8 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 ENV PATH /usr/games/:$PATH
 RUN echo "export $PATH" >> /etc/profile
 
-RUN useradd -ms /bin/bash frotz 
+RUN mkdir /home/frotz
 WORKDIR /home/frotz
 
 EXPOSE 22
 CMD ["/usr/bin/supervisord"]
-
-USER frotz
